@@ -13,11 +13,11 @@ public class ProductService {
 
     private final ProductRepository productRepository;
 
-    public List<Product> findAll() {
+    public List<Product> findAllProducts() {
         return productRepository.findAll();
     }
 
-    public Product findByName(String name) {
+    public Product findProductByName(String name) {
         return productRepository.findProductByName(name);
     }
 }

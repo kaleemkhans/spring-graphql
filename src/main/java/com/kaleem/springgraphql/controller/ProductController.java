@@ -19,12 +19,12 @@ public class ProductController {
     private final ProductService productService;
 
     @GetMapping
-    public List<Product> findAll() {
-        return productService.findAll();
+    public List<Product> findAllProducts() {
+        return productService.findAllProducts();
     }
 
     @GetMapping("/{name}")
     public Product findByName(@PathVariable String name) {
-        return productService.findByName(name);
+        return productService.findProductByName(name);
     }
 }
