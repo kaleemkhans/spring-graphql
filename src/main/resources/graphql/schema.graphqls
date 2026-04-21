@@ -10,3 +10,7 @@ type Query{
     findProductByName(name: String): Product
 }
 
+type Mutation{
+    updateProductPriceByName(name: String, price: Float): Product
+}
+

@@ -18,6 +18,13 @@ public class ProductService {
     }
 
     public Product findProductByName(String name) {
-        return productRepository.findProductByName(name);
+        return productRepository.findProductByName(name).orElse(null);
+    }
+
+    public Product updateProductPriceByName(String name, double price) {
+        Product product = productRepository.findProductByName(name)
+                .orElseThrow(()-> new RuntimeException("product not found"));
+        product.setPrice(price);
+        return productRepository.save(product);
     }
 }
